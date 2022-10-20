@@ -3,10 +3,11 @@ module.exports = Fichier;
 
 function Fichier(sequelize) {
     const attributes = {
-        fiche: { type: DataTypes.INTEGER, allowNull: true, constraint: false },
-        analyse_matiere: { type: DataTypes.INTEGER, allowNull: true, constraint: false },
+        offre: { type: DataTypes.INTEGER, allowNull: true, constraint: false },
+        autre: { type: DataTypes.INTEGER, allowNull: true, constraint: false },
+        path: { type: DataTypes.STRING, allowNull: true },
         url: { type: DataTypes.STRING, allowNull: true },
-        type: { type: DataTypes.STRING, allowNull: true },
+        type: { type: DataTypes.STRING, allowNull: true }
     };
 
     const options = {
