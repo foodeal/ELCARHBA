@@ -1,9 +1,5 @@
-﻿const config = require('config.json');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const db = require('helpers/db');
-const PDFDocument = require('pdfkit');
-const fs = require('fs');
+﻿const jwt = require('jsonwebtoken');
+const db = require('./../../helpers/db');
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 

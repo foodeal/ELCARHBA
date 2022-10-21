@@ -1,8 +1,8 @@
 ﻿const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
-const validateRequest = require('middleware/validate-request');
-const authorize = require('middleware/authorize')
+const validateRequest = require('./../../middleware/validate-request');
+const authorize = require('./../../middleware/authorize')
 const offreService = require('./offre.service');
 
 // routes

@@ -1,7 +1,6 @@
-const config = require('config.json');
+const config = require('./../config.json');
 const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
-const { DataTypes } = require('sequelize');
 
 User = require('../users/user.model');
 Fichier = require('../fichiers/fichier.model');
