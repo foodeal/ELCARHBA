@@ -1,0 +1,49 @@
+@import '@assets/scss/colors';
+
+.statistics_container {
+  background: url(/backgrounds/bg-stats.png) no-repeat;
+  background-size: cover;
+  .statistics_container_grid {
+    padding: 3rem;
+    backdrop-filter: contrast(0.1) brightness(1.8);
+    .statistics_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      .title {
+        border: 3px solid $dark_gray_2;
+        font-weight: 700;
+        color: $dark_gray_2;
+        font-style: normal;
+        font-size: 2rem;
+        padding: 0.5rem 4rem;
+      }
+    }
+
+    .stat_cards {
+      background-color: $elcarhba_yellow;
+      color: $white;
+      max-width: 14rem;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      .card_description {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        .number {
+          font-size: 2rem;
+          font-weight: 700;
+          font-style: normal;
+          color: $white;
+        }
+        .text {
+          color: black;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

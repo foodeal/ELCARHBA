@@ -1,0 +1,58 @@
+@import '@assets/scss/colors';
+
+.diagnosis_container {
+  background: url(/backgrounds/bg-diagnosis.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem;
+
+  .title_container {
+    backdrop-filter: opacity(0.74);
+    border: 2px solid $white;
+    background: transparent
+      linear-gradient(
+        270deg,
+        $opaque-yellow_shadow 0%,
+        $opaque-yellow_shadow 48%,
+        $opaque-yellow_shadow 100%
+      )
+      0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 2px solid $white;
+    border-radius: 30px;
+    margin-bottom: 3.5rem;
+    .title {
+      margin: 0;
+      padding: 1rem;
+      color: $white;
+      text-align: center;
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+
+  .expertise {
+    color: $white;
+    background-color: $bloody_red;
+    text-align: center;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 1rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+  }
+  .expert_desc {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    margin: 1rem;
+    color: $bloody_red;
+    background-color: $white;
+    text-align: center;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}

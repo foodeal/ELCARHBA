@@ -1,0 +1,52 @@
+@import '@assets/scss/colors';
+.dialog_container {
+  background-color: $white;
+  height: 450px;
+  padding:0.5rem 1.5rem;
+  background-color: $white;
+}
+.header_title {
+  color: black;
+  text-align: center;
+  font-weight: 500;
+}
+
+.normal_btn {
+  background-color: $elcarhba_yellow;
+  color: $white;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: auto;
+  text-transform: unset;
+  &:hover {
+    background-color: $dark_navy_blue;
+  }
+}
+.outlined_btn {
+  border: 2px solid $elcarhba_yellow;
+  color: $elcarhba_yellow;
+  font-weight: 500;
+  font-size: 1rem;
+  &:hover {
+    border: 2px solid $dark_navy_blue;
+    color: $dark_navy_blue;
+  }
+}
+.auth_input {
+  margin-top: 1rem;
+}
+.checkbox{
+  color: $elcarhba_yellow;
+}
+
+.divider_name{
+  color: $elcarhba_yellow ;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: $white;
+  padding: 1.5rem;
+  border: 1px solid $light_gray_variation;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 36%;
+}

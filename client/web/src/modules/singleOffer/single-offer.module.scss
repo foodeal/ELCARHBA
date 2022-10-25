@@ -1,0 +1,125 @@
+@import '@assets/scss/colors';
+
+.single_offer_container {
+  padding-top: 1rem;
+  .single_offer_left_container {
+    padding: 1rem;
+  }
+  .single_offer_right_container {
+    padding: 1rem;
+    .title_container {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        color: $dark_navy_blue;
+        margin: 0;
+      }
+      .likes_container {
+        display: flex;
+        align-items: center;
+        .number_of_likes {
+          font-weight: 600;
+          margin-left: 0.75rem;
+        }
+      }
+    }
+    .ref {
+      color: $grey;
+    }
+    .rating {
+      display: flex;
+      color: $elcarhba_yellow;
+    }
+    .disponibility {
+      display: flex;
+      align-items: center;
+      & > * {
+        margin-right: 1rem;
+      }
+      .availability {
+        display: flex;
+        color: #095d00;
+        align-items: center;
+        & > * {
+          margin-right: 0.5rem;
+        }
+      }
+      .availability2 {
+        display: flex;
+        color: #3b3b3b;
+        align-items: center;
+        & > * {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    .rating_details {
+      margin-left: 1rem;
+    }
+    .rating_description {
+      text-align: left;
+      font-size: 1rem;
+      color: #3b3b3b;
+    }
+    .btn_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .first_btns_set {
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        .offer_btn {
+          padding: 0.5rem 0.75rem;
+          color: black;
+          background-color: $white;
+          display: flex;
+          border: 2px solid black;
+          justify-content: space-between;
+        }
+        .discount_btn {
+          margin-left: 1rem;
+          padding: 0.75rem;
+          color: #a70508;
+          background-color: $white;
+          display: flex;
+          border: 2px solid #a70508;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .buy_btn {
+        background-color: $elcarhba_yellow;
+        color: $white;
+        padding: 0.5rem 0.75rem;
+        &:hover {
+          background-color: $dark_navy_blue;
+        }
+      }
+    }
+    .prestataire_container {
+      display: flex;
+      align-items: center;
+      margin: 1rem  auto;
+      width: fit-content;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid $light_gray_variation;
+      border-radius: 7px;
+      & > * {
+        margin-right: 1rem;
+      }
+      .prestataire {
+        display: flex;
+        align-items: center;
+        & > * {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  .spec {
+    padding: 2rem 5rem;
+    background-color: $lighter_gray;
+  }
+}

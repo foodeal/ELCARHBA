@@ -1,0 +1,25 @@
+@import '@assets/scss/colors';
+
+.offers_container {
+  background: url(/backgrounds/offers-bg.png) no-repeat;
+  background-size: cover;
+  .offers_container_grid {
+    padding: 3rem;
+    .offers_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      .title {
+        border: 3px solid $white;
+        font-weight: 700;
+        color: $white;
+        font-style: normal;
+        text-shadow: 0px 1px 16px #ffffff6b;
+        text-transform: capitalize;
+        font-size: 2rem;
+        padding: 0.5rem 4rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.edit_card_container {
+  background-color: white;
+  .card_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    .card_title {
+    }
+    .edit_btn {
+      cursor: pointer;
+    }
+  }
+
+  .card_content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}

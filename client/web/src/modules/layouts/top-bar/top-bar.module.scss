@@ -1,0 +1,48 @@
+@import '@assets/scss/colors';
+.topbar_container {
+  background-color: $dark_navy_blue;
+  height: 3.5rem;
+  min-height: 3.5rem;
+  padding: 0 1.5rem;
+  .toolbar {
+    height: 3.5rem;
+    min-height: 3.5rem;
+    .left_toolbar {
+      display: flex;
+      flex-direction: row;
+      /* & > * {
+        margin-left: 3.25rem;
+      } */
+      .typography_1 {
+        display: flex;
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-style: normal;
+        align-items: center;
+      }
+    }
+    .right_toolbar {
+      display: flex;
+      flex-direction: row;
+      /* & > * {
+        margin-left: 3.25rem;
+      } */
+      .typography_1 {
+        display: flex;
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-style: normal;
+        align-items: center;
+      }
+      .typography_2 {
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-style: normal;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

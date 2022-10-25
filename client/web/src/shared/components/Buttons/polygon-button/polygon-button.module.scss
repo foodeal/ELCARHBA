@@ -1,0 +1,35 @@
+@import '@assets/scss/colors';
+
+.polygon_button {
+  min-width: 10.5rem;
+  clip-path: polygon(11% 0%, 90% 0, 97% 30%, 89% 100%, 12% 100%, 4% 72%);
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  background-color: $elcarhba_yellow;
+  min-height: 2.938rem;
+  padding: 0 1.5rem;
+  flex-grow: unset;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: $white;
+  text-transform: none;
+  &.mobile {
+    height: 1.866rem;
+    width: 7.574rem;
+    font-size: 0.688rem;
+  }
+
+  &:hover {
+    background-color: $yellow_shadow;
+  }
+  &.outlined {
+    color: $elcarhba_yellow;
+    font-weight: 400;
+    background: url('/outlined_btn.svg') no-repeat;
+    background-size: 100% 110%;
+    /* clip-path: path(
+      'M 24.443583,8.6430928 11.35476,58.080398 27.528882,72.209311 H 283.40682 L 301.11055,30.552778 285.04067,8.6430928 H 24.443583 M 22.206233,5.2087104 H 286.44851 L 304.67056,30.052601 285.29465,75.643693 H 26.507487 L 7.8688205,59.361908 Z'
+    ); */
+  }
+}

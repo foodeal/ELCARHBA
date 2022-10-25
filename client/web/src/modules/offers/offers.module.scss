@@ -1,0 +1,68 @@
+@import '@assets/scss/colors';
+
+.offers_container {
+  padding: 0.5rem;
+  background-color: $transparent_grey !important;
+  form {
+    background-color: $transparent_grey;
+  }
+}
+.offers_titles {
+  color: $dark_navy_blue;
+  border: 2px solid $dark_navy_blue;
+  text-shadow: 0px 1px 16px #ffffff6b;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  max-width: 21rem;
+}
+
+.filter_container {
+  padding: 5px;
+  background-color: $light_grey;
+  border: 1px solid $light_gray_variation;
+
+  .filter_title {
+    background-color: $elcarhba_yellow;
+    color: $white;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+  }
+  .filter_content {
+    background-color: $light_grey;
+    color: $grey;
+  }
+  form {
+    background-color: $transparent_grey;
+    border: 1px solid $light_gray_variation;
+  }
+  :global {
+    .MuiCollapse-root,
+    .MuiCollapse-root,
+    .MuiPaper-root {
+      border: none;
+      box-shadow: none;
+      background-color: $transparent_grey;
+    }
+    .MuiPaper-root:before {
+      content: none;
+    }
+  }
+}
+
+.accordion_title {
+  color: $grey;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.btn_init_container {
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  .btn_init {
+    width: 100%;
+    background-color: $elcarhba_yellow;
+    color: $white;
+  }
+}
