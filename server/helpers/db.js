@@ -1,11 +1,11 @@
-const config = require('config.json');
+const config = require('./../config.json');
 const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
-const { DataTypes } = require('sequelize');
 
 User = require('../users/user.model');
 Fichier = require('../fichiers/fichier.model');
 Log = require('../logs/log.model');
+Offre = require('../modules/offres/offre.model');
 
 module.exports = db = {};
 
@@ -26,9 +26,9 @@ async function initialize() {
     db.User = require('../users/user.model')(sequelize);
     db.Fichier = require('../fichiers/fichier.model')(sequelize);
     db.Log = require('../logs/log.model')(sequelize);
+    db.Offre = require('../modules/offres/offre.model')(sequelize);
     
     // Association ManyToMany
-
 
 
     // sync all models with database

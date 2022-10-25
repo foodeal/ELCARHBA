@@ -1,8 +1,8 @@
 ﻿const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
-const validateRequest = require('middleware/validate-request');
-const authorize = require('middleware/authorize')
+const validateRequest = require('./../middleware/validate-request');
+const authorize = require('./../middleware/authorize')
 const fService = require('./fichier.service');
 const formidable = require('formidable');
 
@@ -21,8 +21,9 @@ module.exports = router;
 
 function addSchema(req, res, next) {
     const schema = Joi.object({
-        fiche: Joi.number(),
-        analyse_matiere: Joi.number(),
+        offre: Joi.number(),
+        autre: Joi.number(),
+        path: Joi.string(),
         url: Joi.string().required(),
         type: Joi.string()
     });
@@ -53,8 +54,9 @@ function getById(req, res, next) {
 
 function updateSchema(req, res, next) {
     const schema = Joi.object({
-        fiche: Joi.number().empty(),
-        analyse_matiere: Joi.number().empty(),
+        offre: Joi.number().empty(),
+        autre: Joi.number().empty(),
+        path: Joi.string(),
         url: Joi.string().empty(),
         type: Joi.string().empty()
     });
@@ -112,17 +114,19 @@ const form = formidable({
             console.log(JSON.stringify({ fields, files }));
             if (Array.from(files.files).length > 1) {
             Array.from(files.files).forEach(files => {
-            req.body.fiche = fields.fiche;
-            req.body.analyse_matiere = fields.analyse_matiere;
-            req.body.url = files.filepath;
+            req.body.fiche = fields.relatedf;
+            req.body.analyse_matiere = fields.relatedam;
+            req.body.path = files.files.filepath;
+            req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
             req.body.type = files.originalFilename.substr(files.originalFilename.lastIndexOf('.') + 1);
             fService.create(req.body);
             i++;
             });}
             else {
-                req.body.analyse_matiere = fields.analyse_matiere;
-                req.body.fiche = fields.fiche;
-                req.body.url = files.files.filepath;
+                req.body.analyse_matiere = fields.relatedam;
+                req.body.fiche = fields.relatedf;
+                req.body.path = files.files.filepath;
+                req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
                 req.body.type = files.files.originalFilename.substr(files.files.originalFilename.lastIndexOf('.') + 1);
                 fService.create(req.body);
                 i++;  
@@ -132,4 +136,16 @@ const form = formidable({
         return res.status(200).send({ message: i + ' Files Uploaded Successfully' });
     });
  });
+
+
+ router.get('/download/:fiche/:analyse', async (req, res, next) => {
+    fichier = await fService.downloadFichiers(req.params.fiche, req.params.analyse)
+    if (fichier != null) {
+        console.log(fichier);
+        var filePath = fichier; // Or format the path using the `id` rest param
+        var fileName = "fichier" + req.params.fiche + req.params.analyse +".pdf"; // The default name the browser will use
+        // res.attachment(filePath);
+        res.download(filePath, fileName); 
+    } 
+});
  
