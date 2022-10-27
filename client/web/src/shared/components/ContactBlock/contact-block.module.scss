@@ -1,0 +1,26 @@
+.typography_1 {
+  display: flex;
+  font-weight: 500 !important;
+  font-style: normal;
+  margin-left: 0;
+  div {
+    word-break: break-word;
+  }
+}
+
+.horizontal_list {
+  flex-direction: row;
+  display: flex;
+  li {
+    width: fit-content;
+    padding-right: 1rem;
+  }
+}
+
+.vertical_list {
+  flex-direction: column;
+  display: flex;
+  li {
+    padding-bottom: 0.5rem;
+  }
+}

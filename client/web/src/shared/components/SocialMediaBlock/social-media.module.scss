@@ -1,0 +1,13 @@
+.social_media {
+  .social_media_item {
+    padding: 0.5rem 0;
+  }
+  .typography_1 {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

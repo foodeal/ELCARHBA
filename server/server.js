@@ -5,6 +5,15 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('./middleware/error-handler');
 var path = require('path');
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+  };
+  
+
 // const localtunnel = require('localtunnel');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +29,11 @@ app.get('/', (req, res) => {
 
 // api routes
 app.use('/images', express.static('images'));
-app.use('/users', require('./users/users.controller'));
+app.use('/users', require('./modules/users/user.controller'));
+app.use('/prestataires', require('./modules/prestataires/prestataire.controller'));
+app.use('/coupons', require('./modules/coupons/coupon.controller'));
+app.use('/experts', require('./modules/experts/expert.controller'));
+app.use('/garages', require('./modules/garages/garage.controller'));
 app.use('/fichiers', require('./fichiers/fichier.controller'));
 app.use('/logs', require('./logs/log.controller'));
 app.use('/offres', require('./modules/offres/offre.controller'));
@@ -30,7 +43,9 @@ app.use(errorHandler);
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 443;
-app.listen(port, () => console.log('Server listening on port ' + port));
+// app.listen(port, () => console.log('Server listening on port ' + port));
+console.log('Server listening on port ' + port);
+https.createServer(options, app).listen(443);
 
 // //LocalTunnel
 // (async () => {

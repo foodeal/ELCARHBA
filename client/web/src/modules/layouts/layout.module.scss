@@ -1,0 +1,27 @@
+.layout_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1;
+  min-height: 100vh;
+
+  .app_header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+    left: 0;
+  }
+
+  .layout_footer {
+    margin-top: auto;
+  }
+
+  button {
+    text-transform: none;
+  }
+}

@@ -2,7 +2,7 @@
 const router = express.Router();
 const Joi = require('joi');
 const validateRequest = require('./../middleware/validate-request');
-const authorize = require('./../middleware/authorize')
+const authorize = require('./../middleware/authorize');
 const fService = require('./fichier.service');
 const formidable = require('formidable');
 

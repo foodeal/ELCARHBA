@@ -1,0 +1,53 @@
+@import '@assets/scss/colors';
+
+.about_container {
+  .header {
+    display: flex;
+    padding: 1rem 4rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: $navy_blue_variation;
+    color: $white;
+    .header_description {
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: $white;
+    }
+    .header_button {
+      border: 3px solid $white;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: normal;
+      padding: 0.5rem 1rem;
+    }
+  }
+  .about_body {
+    background-image: url(/backgrounds/bg-about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 11rem 12rem;
+    .body_title{
+      border: 3px solid $white;
+      color: $white;
+      font-style: normal;
+      width: fit-content;
+      padding: 0.5rem 4rem;
+      letter-spacing: 1.1px;
+    }
+    .body_description{
+      margin-top: 5rem;
+      margin-bottom: 6rem;
+      border-left: 4px solid $white;
+      color: $white;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 2rem;
+      max-width: 37rem;
+      padding-left: 2rem;
+      text-align: justify;
+    }
+  }
+}

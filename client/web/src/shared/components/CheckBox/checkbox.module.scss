@@ -1,0 +1,15 @@
+@import '@assets/scss/colors';
+
+.checkbox_container {
+  color: $grey;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-left: 0.5rem;
+  label {
+    :global {
+      .MuiFormControlLabel-label {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

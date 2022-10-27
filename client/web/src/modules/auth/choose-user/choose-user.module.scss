@@ -1,0 +1,40 @@
+@import '@assets/scss/colors';
+
+.layout_container {
+  min-height: 30rem;
+  background-image: url(/car.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 3rem;
+
+  .card_content{
+    backdrop-filter: opacity(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid gray ;
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    .title{
+      margin: 0;
+      color: $elcarhba_yellow;
+    }
+    .description{
+      margin-top: auto;
+      color: $white;
+      text-align: justify;
+    }
+    .action_btn{
+      margin-top: auto;
+      width: 40%;
+      display: flex;
+      align-items: flex-start;
+      color: $white;
+      background-color: $elcarhba_yellow;
+    }
+  
+  }
+
+}

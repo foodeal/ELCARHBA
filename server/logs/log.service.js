@@ -1,7 +1,4 @@
-﻿const config = require('config.json');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const db = require('helpers/db');
+﻿const db = require('./../helpers/db');
 const fs = require('fs');
 
 module.exports = {

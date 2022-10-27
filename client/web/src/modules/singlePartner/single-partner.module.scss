@@ -1,0 +1,48 @@
+@import '@assets/scss/colors';
+
+.singleParnerContainer{
+  background-color: $lighter_gray;
+  .banner{
+    height: 160px;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    background: url('/backgrounds/offers-bg.png') no-repeat;
+    background-size:cover;
+    background-position:bottom ;
+  
+  }
+
+  .garage_name_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    color: $dark_navy_blue;
+    background-color: #fff;
+  }
+  .garage_social_media{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding-left: 4rem;
+    color: $dark_navy_blue;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  .garage_offers{
+    margin-top: 1rem;
+    padding: 4rem;
+    background-color: #fff;
+  }
+
+}
+.offers_titles {
+  color: $dark_navy_blue;
+  border: 2px solid $dark_navy_blue;
+  text-shadow: 0px 1px 16px #ffffff6b;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  max-width: 21rem;
+}

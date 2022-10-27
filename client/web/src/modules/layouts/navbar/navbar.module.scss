@@ -1,0 +1,54 @@
+@import '@assets/scss/colors';
+.topbar_container {
+  background-color: $white;
+  z-index: 1;
+}
+
+.my_account_btn {
+  color: $white;
+  background-color: $elcarhba_yellow;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.8125rem;
+  &:hover {
+    background-color: $white;
+    color: $elcarhba_yellow;
+    border: solid 2px $elcarhba_yellow;
+  }
+}
+
+.nav_btns_container {
+  .nav_btns {
+    color: $dark_navy_blue;
+    font-weight: 500;
+    font-size: 1rem;
+    font-style: normal;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.account_dropdown {
+  border-radius: 0;
+  width: 18rem;
+  right: 1.875rem !important;
+  top: 11rem !important;
+  left: unset !important;
+  ul {
+    padding-bottom: 0 !important;
+    li {
+      justify-content: center;
+      font: normal normal bold 0.875rem/1rem Arial;
+      border-bottom: 1px solid $light_grey;
+    }
+  }
+}
+
+.account_menu {
+  z-index: 0;
+}
+
+.logo {
+  cursor: pointer;
+}

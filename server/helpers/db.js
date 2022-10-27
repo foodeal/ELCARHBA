@@ -2,7 +2,11 @@ const config = require('./../config.json');
 const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
 
-User = require('../users/user.model');
+User = require('../modules/users/user.model');
+Prestataire = require('../modules/prestataires/prestataire.model');
+Garage = require('../modules/garages/garage.model');
+Coupon = require('../modules/coupons/coupon.model');
+Expert = require('../modules/experts/expert.model');
 Fichier = require('../fichiers/fichier.model');
 Log = require('../logs/log.model');
 Offre = require('../modules/offres/offre.model');
@@ -23,10 +27,14 @@ async function initialize() {
 
     // init models and add them to the exported db object
 
-    db.User = require('../users/user.model')(sequelize);
+    db.User = require('../modules/users/user.model')(sequelize);
     db.Fichier = require('../fichiers/fichier.model')(sequelize);
     db.Log = require('../logs/log.model')(sequelize);
     db.Offre = require('../modules/offres/offre.model')(sequelize);
+    db.Prestataire = require('../modules/prestataires/prestataire.model')(sequelize);
+    db.Garage = require('../modules/garages/garage.model')(sequelize);
+    db.Coupon = require('../modules/coupons/coupon.model')(sequelize);
+    db.Expert = require('../modules/experts/expert.model')(sequelize);
     
     // Association ManyToMany
 

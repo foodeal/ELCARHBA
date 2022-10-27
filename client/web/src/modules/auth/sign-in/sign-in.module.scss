@@ -1,0 +1,38 @@
+@import '@assets/scss/colors';
+
+.login_container {
+  background-image: url('/authBack.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3rem 1rem;
+  .login_content {
+    color: $white;
+    min-height: 37.5rem;
+    width: 80%;
+    background: url('/polygonBack.svg') no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    padding: 3rem 20%;
+    h2 {
+      font-size: 1.875rem;
+      line-height: 2.688rem;
+      font-style: normal;
+      font-family: Roboto;
+      text-transform: capitalize;
+      text-align: left;
+      letter-spacing: 0.6px;
+      hr {
+        width: 115%;
+        border-color: $white;
+      }
+    }
+  }
+
+  .submit_button {
+    margin-top: 1.5rem;
+  }
+
+  .auth_input {
+    margin-top: 2rem;
+  }
+}
