@@ -41,15 +41,17 @@ app.use('/offres', require('./modules/offres/offre.controller'));
 // global error handler
 app.use(errorHandler);
 
-// start server
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 443;
+// start server local
+// const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
 // app.listen(port, () => console.log('Server listening on port ' + port));
-console.log('Server listening on port ' + port);
+
+// start server
+console.log('Server listening on port 443');
 https.createServer(options, app).listen(443);
 
 // //LocalTunnel
 // (async () => {
-//     const tunnel = await localtunnel({ port: 4000, subdomain: 'jolly-newt-85' });  
+//     const tunnel = await localtunnel({ port: 4000, subdomain: 'ElCarhba' });  
 //     tunnel.on('close', () => {
 //       console.log('Tunnel closed');
 //       // tunnels are closed

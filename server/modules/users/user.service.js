@@ -125,7 +125,7 @@ async function updateMdp(params) {
          from: 'lesvergersapp@gmail.com',
          to: 'ahmed.haddad@ieee.org',
          subject: 'Changer Mot de Passe',
-         text: 'Bonjour '+ user.nom + ', votre mail est : ' + user.email +'et Mot de passe : '+randomstring+'.'
+         text: 'Bonjour '+ user.nom_prenom + ', votre mail est : ' + user.email +'et Mot de passe : '+randomstring+'.'
     };
 
      transporter.sendMail(mailOptions, function(error, info){

@@ -16,7 +16,8 @@ module.exports = {
 };
 
 async function authenticate({ email, motdepasse }) {
-    const prestataire = await db.Prestataire.scope('withHash').findOne({ where: { email } });
+    const email_prestataire = email;
+    const prestataire = await db.Prestataire.scope('withHash').findOne({ where: { email_prestataire } });
 
     if (!prestataire || !(await bcrypt.compare(motdepasse, prestataire.motdepasse)))
         throw 'Mot de passe incorrecte';
@@ -37,7 +38,7 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    if (await db.Prestataire.findOne({ where: { email: params.email } })) {
+    if (await db.Prestataire.findOne({ where: { email_prestataire: params.email_prestataire } })) {
         throw 'Email "' + params.email + '" existe déjà';
     }
 
@@ -54,9 +55,9 @@ async function update(id, params) {
     const prestataire = await getPrestataire(id);
 
     // validate
-    const emailChanged = params.email && prestataire.email !== params.email;
-    if (emailChanged && await db.Prestataire.findOne({ where: { email: params.email } })) {
-        throw 'Email "' + params.email + '" existe déjà';
+    const emailChanged = params.email_prestataire && prestataire.email_prestataire !== params.email_prestataire;
+    if (emailChanged && await db.Prestataire.findOne({ where: { email_prestataire: params.email_prestataire } })) {
+        throw 'Email "' + params.email_prestataire + '" existe déjà';
     }
 
     // hash password if it was entered
@@ -85,14 +86,14 @@ async function getPrestataire(id) {
 }
 
 async function getPrestataireByEmail(params) {
-    const prestataire = await db.Prestataire.findOne({ where: { email: params.email } });
+    const prestataire = await db.Prestataire.findOne({ where: { email_prestataire: params.email_prestataire } });
     if (!prestataire) throw 'Pas utilisateur';
     return prestataire.id;
 }
 
 
 async function updateMdp(params) {
-    const prestataire = await db.Prestataire.findOne({ where: { email: params.email } });
+    const prestataire = await db.Prestataire.findOne({ where: { email_prestataire: params.email_prestataire } });
     if (!prestataire) throw 'Pas utilisateur';
     else {
     var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz"; 
@@ -125,7 +126,7 @@ async function updateMdp(params) {
          from: 'lesvergersapp@gmail.com',
          to: 'ahmed.haddad@ieee.org',
          subject: 'Changer Mot de Passe',
-         text: 'Bonjour '+ prestataire.nom + ', votre mail est : ' + prestataire.email +'et Mot de passe : '+randomstring+'.'
+         text: 'Bonjour '+ prestataire.nom_prestataire + ', votre mail est : ' + prestataire.email_prestataire +'et Mot de passe : '+randomstring+'.'
     };
 
      transporter.sendMail(mailOptions, function(error, info){

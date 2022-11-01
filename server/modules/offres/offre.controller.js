@@ -28,7 +28,9 @@ function addSchema(req, res, next) {
         description: Joi.string(),
         prix_initial: Joi.number(),
         pourcentage_prix_initial: Joi.number(),
-        prix_remise: Joi.number()
+        prix_remise: Joi.number(),
+        prestataire_id: Joi.number(),
+        statut: Joi.string()
     });
     validateRequest(req, next, schema);
 }
@@ -71,7 +73,9 @@ function updateSchema(req, res, next) {
         description: Joi.string(),
         prix_initial: Joi.number(),
         pourcentage_prix_initial: Joi.number(),
-        prix_remise: Joi.number()
+        prix_remise: Joi.number(),
+        prestataire_id: Joi.number(),
+        statut: Joi.string()
     });
     validateRequest(req, next, schema);
 }
