@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { MouseEvent } from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
@@ -102,7 +102,7 @@ export const CustomHorizontalCard = ({ url }: CustomCardProps) => {
               <Button
                 className={styles.btn_learn_more}
                 size='small'
-                onClick={e => {
+                onClick={(e: MouseEvent<HTMLButtonElement>) => {
                   e.preventDefault();
                   router.push('/offers/464');
                 }}

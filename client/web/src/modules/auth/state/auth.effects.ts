@@ -15,12 +15,12 @@ function* authenticateEffect({
   UserDetails
 > {
   try {
-    // const user = yield authenticate({ body: SigninData.mapToApiValue(payload) });
+     //const user = yield authenticate({ body: SigninData.mapToApiValue(payload) });
     const user: UserDetails = {
       token:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
       id: "1",
-      email: "ibchalbi@gmail.com",
+      email: "mail@gmail.com",
       firstName: "ibtissem",
       lastName: "chalbi"
     };

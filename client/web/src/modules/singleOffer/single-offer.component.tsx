@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Button, Grid, Rating } from '@mui/material';
 import Image from 'next/image';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -82,7 +82,7 @@ export const SingleOffer: React.FC = () => {
           <Button
             className={styles.buy_btn}
             size='small'
-            onClick={e => {
+            onClick={(e: MouseEvent<HTMLButtonElement>) => {
               dispatch(openModal({ modalId: ModalIdEnum.Login }));
               // dispatch(openModal({ modalId: ModalIdEnum.Purchase }));
             }}

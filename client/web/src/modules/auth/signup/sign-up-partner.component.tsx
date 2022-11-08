@@ -1,8 +1,8 @@
 import React from 'react';
 import { SigninData } from '@core/models';
 import { useDispatch, useSelector } from 'react-redux';
-import { authenticate } from './state/auth.actions';
-import { authLoading, authSubmitting } from './state/auth.selectors';
+import { authenticate } from '../state/auth.actions';
+import { authLoading, authSubmitting } from '../state/auth.selectors';
 import { Divider, Grid } from '@mui/material';
 import { Field } from 'react-final-form';
 import { FormIdEnum } from '@core/enums';
