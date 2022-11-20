@@ -33,6 +33,8 @@ app.use('/users', require('./modules/users/user.controller'));
 app.use('/prestataires', require('./modules/prestataires/prestataire.controller'));
 app.use('/coupons', require('./modules/coupons/coupon.controller'));
 app.use('/experts', require('./modules/experts/expert.controller'));
+app.use('/services', require('./modules/services/service.controller'));
+app.use('/produits', require('./modules/produits/produit.controller'));
 app.use('/garages', require('./modules/garages/garage.controller'));
 app.use('/fichiers', require('./fichiers/fichier.controller'));
 app.use('/logs', require('./logs/log.controller'));

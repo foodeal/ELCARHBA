@@ -15,15 +15,16 @@ function* authenticateEffect({
   UserDetails
 > {
   try {
-    // const user = yield authenticate({ body: SigninData.mapToApiValue(payload) });
-    const user: UserDetails = {
-      token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-      id: "1",
-      email: "ibchalbi@gmail.com",
-      firstName: "ibtissem",
-      lastName: "chalbi"
-    };
+    const user = yield authenticate({ body: SigninData.mapToApiValue(payload) });
+    console.log("User" + user);
+    // const user: UserDetails = {
+    //   token:
+    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    //   id: "1",
+    //   email: "mail@gmail.com",
+    //   firstName: "ibtissem",
+    //   lastName: "chalbi"
+    // };
     localStorage.setItem(localStorageKeys.token, user.token);
     yield put(authAction.authenticateSuccess(user));
   } catch (error) {

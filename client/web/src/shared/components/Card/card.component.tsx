@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { MouseEvent } from 'react';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
@@ -30,7 +30,7 @@ export const CustomCard = ({
   title,
   description,
   disponibility,
-  url,
+  url
 }: CustomCardProps) => {
   const router = useRouter();
   return (
@@ -59,7 +59,7 @@ export const CustomCard = ({
           variant='h6'
           component='div'
           sx={{ display: 'flex', justifyContent: 'space-between' }}
-          onClick={e => {
+          onClick={(e: MouseEvent<HTMLDivElement>) => {
             e.preventDefault();
             router.push('/partners/profile');
           }}
@@ -90,7 +90,7 @@ export const CustomCard = ({
           <Grid container justifyContent='center'>
             <Button
               className={styles.btn_learn_more}
-              onClick={e => {
+              onClick={(e: MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 router.push('/partners/464');
               }}
@@ -116,7 +116,7 @@ export const CustomCard = ({
             <Button
               className={styles.btn_learn_more}
               size='small'
-              onClick={e => {
+              onClick={(e: MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 router.push('/offers/464');
               }}

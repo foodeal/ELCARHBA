@@ -6,6 +6,8 @@ User = require('../modules/users/user.model');
 Prestataire = require('../modules/prestataires/prestataire.model');
 Garage = require('../modules/garages/garage.model');
 Coupon = require('../modules/coupons/coupon.model');
+Service = require('../modules/services/service.model');
+Produit = require('../modules/produits/produit.model');
 Expert = require('../modules/experts/expert.model');
 Fichier = require('../fichiers/fichier.model');
 Log = require('../logs/log.model');
@@ -33,6 +35,8 @@ async function initialize() {
     db.Offre = require('../modules/offres/offre.model')(sequelize);
     db.Prestataire = require('../modules/prestataires/prestataire.model')(sequelize);
     db.Garage = require('../modules/garages/garage.model')(sequelize);
+    db.Service = require('../modules/services/service.model')(sequelize);
+    db.Produit = require('../modules/produits/produit.model')(sequelize);
     db.Coupon = require('../modules/coupons/coupon.model')(sequelize);
     db.Expert = require('../modules/experts/expert.model')(sequelize);
     

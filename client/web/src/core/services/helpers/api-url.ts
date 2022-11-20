@@ -1,6 +1,6 @@
-export const apiUrl = '/';
+export const apiUrl = 'https://13.39.51.237:443/users/';
 
 export enum ApiUrlsEnum {
-  Authenticate = 'login',
+  Authenticate = 'authenticate',
   CheckToken = 'profile',
 }

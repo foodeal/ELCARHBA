@@ -11,16 +11,16 @@ export async function authenticate(params: HttpParamsType<LoginDTO>): Promise<Us
 }
 
 export async function checkToken(): Promise<UserDetails> {
-  // const user = await get<UserDTO>(apiUrlMatcher(ApiUrlsEnum.CheckToken));
+  const user = await get<UserDTO>(apiUrlMatcher(ApiUrlsEnum.CheckToken));
 
-  const user: UserDTO = {
-    token:
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
-    id: 1,
-    email: 'ibchalbi@gmail.com',
-    firstName: 'ahmed',
-    lastName: 'chebil',
-  };
+  // const user: UserDTO = {
+  //   token:
+  //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+  //   id: 1,
+  //   email: 'mail@gmail.com',
+  //   firstName: 'ahmed',
+  //   lastName: 'chebil',
+  // };
 
   return UserDetails.mapToApiValue(user);
 }

@@ -7,11 +7,11 @@ const offreService = require('./offre.service');
 
 // routes
 router.post('/add',authorize(), addSchema, add);
-router.get('/', authorize(), getAll);
+router.get('/', getAll);
 router.get('/current', authorize(), getCurrent);
-router.get('/:id', authorize(), getById);
+router.get('/:id', getById);
 router.get('/fichiers/:id', authorize(), getFichiers);
-router.post('/soffre/', authorize(), findOffre);
+router.post('/soffre/', findOffre);
 router.put('/:id', authorize(), updateSchema, update);
 router.delete('/:id', authorize(), _delete);
 

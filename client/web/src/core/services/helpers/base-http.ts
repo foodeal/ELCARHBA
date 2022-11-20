@@ -1,12 +1,39 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { ErrorResponseData, HttpParamsType, RequestOptions } from '../../models';
 
 const baseHttpService = axios.create({ baseURL: process.env.REACT_APP_APP_API_ENDPOINT });
 
+function getAccessToken() {
+  return localStorage.getItem('token');
+}
+
+baseHttpService.interceptors.request.use(
+  (config : AxiosRequestConfig) => {
+    if (getAccessToken()) {
+      config.headers!.Authorization = `Bearer ${getAccessToken()}`;
+    }
+    config.headers!.Accept = 'application/json; charset=utf-8';
+    config.headers!['Content-Type'] = 'application/json; charset=utf-8';
+    config.headers!['Access-Control-Allow-Origin'] = '*';
+
+    return config;
+  },
+  (error) => Promise.reject(error),
+);
+
 baseHttpService.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error && error.response),
+  (error: AxiosError) => {
+    if (error.response?.status === 401) {
+      //redirectTo to login or dashboard
+    }
+
+    if (error.response?.status === 500) {
+      // redirectTo 500 page
+    }
+    return Promise.reject(error);
+  },
 );
 
 export function sleep(ms: number) {
