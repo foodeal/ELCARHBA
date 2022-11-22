@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -25,6 +25,7 @@ import Link from "next/link";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export const Navbar: React.FC = () => {
+  const [connected, setConnected] = React.useState<boolean>(false);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -35,6 +36,10 @@ export const Navbar: React.FC = () => {
     null
   );
   const open = Boolean(anchorElAuth);
+
+  useEffect(() => {
+    setConnected(isConnected())
+  }, [])
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -161,7 +166,7 @@ export const Navbar: React.FC = () => {
             ))}
           </Box>
 
-          {isConnected() ? (
+          {connected ? (
             <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

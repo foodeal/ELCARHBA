@@ -33,7 +33,7 @@ function* authenticateEffect({
 }
 
 function* authenticateSuccessEffect(): Generator {
-  // yield redirectTo([RouterPaths.RootPaths.rootPath]);
+  yield redirectTo([RouterPaths.RootPaths.rootPath]);
 }
 
 function* failEffect(error: ErrorResponseData): Generator {

@@ -87,15 +87,7 @@ export function SignUp(): JSX.Element {
 
               {renderFields(SignupFormNamesEnum.Password)}
               {renderFields(SignupFormNamesEnum.ConfirmPassword)}
-              <Grid item xs={12} style={{ display: 'flex' }}>
-                <p>Informations optionnelles</p>
-              </Grid>
-              {renderFields(SignupFormNamesEnum.LastCarOilChangeDate)}
-              {renderFields(SignupFormNamesEnum.LastCarOilChangeAtKm)}
-              {renderFields(SignupFormNamesEnum.LastBrakePlateChangeAtKm)}
-              {renderFields(SignupFormNamesEnum.LastBatteryChangeDate)}
-              {renderFields(SignupFormNamesEnum.InsuranceExpiringDate)}
-              {renderFields(SignupFormNamesEnum.TechInspectExpiringDate)}
+
               <Grid
                 item
                 xs={12}

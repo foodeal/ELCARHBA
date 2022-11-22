@@ -36,7 +36,8 @@ function MyApp(props: AppPropsWithLayout) {
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Dialogs>
-        <GuardRouter>{getLayout(<Component {...pageProps} />)}</GuardRouter>
+        {/* <GuardRouter>{getLayout(<Component {...pageProps} />)}</GuardRouter> */}
+        {getLayout(<Component {...pageProps} />)}
       </Dialogs>
     </CacheProvider>
   );

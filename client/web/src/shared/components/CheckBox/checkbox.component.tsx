@@ -30,7 +30,7 @@ export function Checkbox(props: InputProps): JSX.Element {
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     const value = event.target.value;
-    props.input.onChange(value);
+    props?.input?.onChange(value);
   };
 
   return (

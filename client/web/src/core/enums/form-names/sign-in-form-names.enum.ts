@@ -24,7 +24,6 @@ export namespace SigninFormNamesEnum {
     formFieldName
   >([
     [SigninFormNamesEnum.Email, "email"],
-    [SigninFormNamesEnum.Password, "password"],
-    [SigninFormNamesEnum.RememberMe, "rememberMe"],
+    [SigninFormNamesEnum.Password, "motdepasse"],
   ]);
 }

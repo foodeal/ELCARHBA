@@ -2,6 +2,7 @@ import { localStorageKeys } from "@core/constant";
 import jwt_decode from "jwt-decode";
 
 export const isConnected = () => {
+  if (window != undefined) {
   const token = localStorage.getItem(localStorageKeys.token) || "";
   let decodedToken: any = null;
   let isAuthenticated = true;
@@ -21,4 +22,6 @@ export const isConnected = () => {
     }
   }
   return isAuthenticated;
+ }
+ return false;
 };

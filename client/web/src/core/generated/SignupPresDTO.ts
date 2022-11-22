@@ -1,4 +1,4 @@
-export interface SignupDTO {
+export interface SignupPresDTO {
   email: string;
   nom_prenom: string;
   motdepasse: string;

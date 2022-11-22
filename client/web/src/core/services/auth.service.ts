@@ -5,6 +5,7 @@ import { UserDTO } from '../generated/UserDto';
 import { UserDetails } from '../models/user/user-details';
 
 export async function authenticate(params: HttpParamsType<LoginDTO>): Promise<UserDetails> {
+  console.log("Params", params);
   const user = await post<UserDTO>(apiUrlMatcher(ApiUrlsEnum.Authenticate), params);
 
   return UserDetails.mapToApiValue(user);

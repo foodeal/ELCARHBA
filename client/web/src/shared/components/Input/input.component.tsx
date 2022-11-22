@@ -65,7 +65,7 @@ export function Input({
     input.onChange(value);
   };
 
-  console.log(type);
+  // console.log(type);
 
   return (
     <TextField

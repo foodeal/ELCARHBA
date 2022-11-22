@@ -35,9 +35,9 @@ export const ControlledAccordion = ({
         aria-controls="panel1bh-content"
         id="panel1bh-header"
       >
-        {title && <Typography>{title}</Typography>}
+        {title && <div>{title}</div>}
         {summary && (
-          <Typography sx={{ color: "text.secondary" }}>{summary}</Typography>
+          <div style={{ color: "text.secondary" }}>{summary}</div>
         )}
       </AccordionSummary>
       <AccordionDetails>{content}</AccordionDetails>
