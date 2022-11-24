@@ -7,6 +7,7 @@ User_Favori = require('../modules/users_favoris/userf.model');
 Prestataire = require('../modules/prestataires/prestataire.model');
 Garage = require('../modules/garages/garage.model');
 Coupon = require('../modules/coupons/coupon.model');
+Coupon_Historique = require('../modules/coupons_historiques/couponh.model');
 Service = require('../modules/services/service.model');
 Produit = require('../modules/produits/produit.model');
 Expert = require('../modules/experts/expert.model');
@@ -42,6 +43,7 @@ async function initialize() {
     db.Service = require('../modules/services/service.model')(sequelize);
     db.Produit = require('../modules/produits/produit.model')(sequelize);
     db.Coupon = require('../modules/coupons/coupon.model')(sequelize);
+    db.Coupon_Historique = require('../modules/coupons_historiques/couponh.model')(sequelize);
     db.Expert = require('../modules/experts/expert.model')(sequelize);
     
     // Association ManyToMany

@@ -24,7 +24,8 @@ function addSchema(req, res, next) {
         jours_travail: Joi.string(),
         adresse_garage: Joi.string(),
         contact_garage: Joi.string(),
-        description_garage: Joi.string()
+        type_garage: Joi.string(),
+        prestataire_id: Joi.number().required()
     });
     validateRequest(req, next, schema);
 }
@@ -58,7 +59,8 @@ function updateSchema(req, res, next) {
         jours_travail: Joi.string(),
         adresse_garage: Joi.string(),
         contact_garage: Joi.string(),
-        description_garage: Joi.string()
+        type_garage: Joi.string(),
+        prestataire_id: Joi.number().required()
     });
     validateRequest(req, next, schema);
 }

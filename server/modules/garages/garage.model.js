@@ -8,7 +8,8 @@ function Garage(sequelize) {
         jours_travail: { type: DataTypes.STRING, allowNull: true },
         adresse_garage: { type: DataTypes.STRING, allowNull: true },
         contact_garage: { type: DataTypes.STRING, allowNull: true },
-        description_garage: { type: DataTypes.TEXT, allowNull: true }
+        type_garage: { type: DataTypes.TEXT, allowNull: true },
+        prestataire_id: { type: DataTypes.INTEGER, allowNull: false, references: { model : 'Prestataires', key: 'id' } }
     };
 
     const options = {
