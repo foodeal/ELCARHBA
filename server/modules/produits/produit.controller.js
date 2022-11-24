@@ -26,7 +26,8 @@ function addSchema(req, res, next) {
         categorie: Joi.string().required(),
         reference: Joi.string().required(),
         prix: Joi.number().required(),
-        description: Joi.string().required()
+        description: Joi.string().required(),
+        offre_id: Joi.number()
     });
     validateRequest(req, next, schema);
 }
@@ -62,7 +63,8 @@ function updateSchema(req, res, next) {
         categorie: Joi.string().required(),
         reference: Joi.string().required(),
         prix: Joi.number().required(),
-        description: Joi.string().required()
+        description: Joi.string().required(),
+        offre_id: Joi.number()
     });
     validateRequest(req, next, schema);
 }

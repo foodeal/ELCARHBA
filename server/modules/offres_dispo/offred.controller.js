@@ -1,9 +1,9 @@
 ﻿const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
-const validateRequest = require('./../../middleware/validate-request');
-const authorize = require('./../../middleware/authorize')
-const offreService = require('./offre.service');
+const validateRequest = require('../../middleware/validate-request');
+const authorize = require('../../middleware/authorize')
+const offreService = require('./offred.service');
 
 // routes
 router.post('/add',authorize(), addSchema, add);
@@ -20,15 +20,12 @@ module.exports = router;
 
 function addSchema(req, res, next) {
     const schema = Joi.object({
-        titre_offre: Joi.string(),
-        conditions_utilisation: Joi.string(),
+        date_debut: Joi.date().required(),
+        date_fin: Joi.date().required(),
         quantite: Joi.number(),
-        description: Joi.string(),
-        prix_initial: Joi.number(),
-        pourcentage_prix_initial: Joi.number(),
-        prix_remise: Joi.number(),
-        prestataire_id: Joi.number(),
-        statut: Joi.string()
+        nombre_offres: Joi.number(),
+        statut: Joi.string(),
+        offre_id: Joi.number(),
     });
     validateRequest(req, next, schema);
 }
@@ -63,15 +60,12 @@ function getById(req, res, next) {
 
 function updateSchema(req, res, next) {
     const schema = Joi.object({
-        titre_offre: Joi.string(),
-        conditions_utilisation: Joi.string(),
+        date_debut: Joi.date().required(),
+        date_fin: Joi.date().required(),
         quantite: Joi.number(),
-        description: Joi.string(),
-        prix_initial: Joi.number(),
-        pourcentage_prix_initial: Joi.number(),
-        prix_remise: Joi.number(),
-        prestataire_id: Joi.number(),
-        statut: Joi.string()
+        nombre_offres: Joi.number(),
+        statut: Joi.string(),
+        offre_id: Joi.number()
     });
     validateRequest(req, next, schema);
 }

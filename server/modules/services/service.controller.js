@@ -20,13 +20,13 @@ module.exports = router;
 function addSchema(req, res, next) {
     const schema = Joi.object({
         nom: Joi.string().required(),
-        marque: Joi.string().required(),
         modele: Joi.string().required(),
         type_motorisation: Joi.string().required(),
         categorie: Joi.string().required(),
         reference: Joi.string().required(),
         prix: Joi.number().required(),
-        description: Joi.string().required()
+        description: Joi.string().required(),
+        offre_id: Joi.number()
     });
     validateRequest(req, next, schema);
 }
@@ -56,13 +56,13 @@ function getById(req, res, next) {
 function updateSchema(req, res, next) {
     const schema = Joi.object({
         nom: Joi.string().required(),
-        marque: Joi.string().required(),
         modele: Joi.string().required(),
         type_motorisation: Joi.string().required(),
         categorie: Joi.string().required(),
         reference: Joi.string().required(),
         prix: Joi.number().required(),
-        description: Joi.string().required()
+        description: Joi.string().required(),
+        offre_id: Joi.number()
     });
     validateRequest(req, next, schema);
 }

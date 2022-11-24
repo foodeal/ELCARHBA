@@ -34,16 +34,17 @@ function authenticate(req, res, next) {
 
 function registerSchema(req, res, next) {
     const schema = Joi.object({
-        nom_prenom: Joi.string().required(),
+        nom_utilisateur: Joi.string().required(),
+        prenom_utilisateur: Joi.string().required(),
         date_naissance: Joi.date().required(),
         email: Joi.string().email().required(),
-        tel_utilisateur: Joi.string().required(),
-        occupation: Joi.string().required(),
-        role: Joi.string().required(),
-        pays_user: Joi.string().required(),
-        ville_user: Joi.string().required(),
-        adresse_user: Joi.string().required(),
-        motdepasse: Joi.string().min(6).required()
+        tel_utilisateur: Joi.string(),
+        role: Joi.string(),
+        pays_user: Joi.string(),
+        ville_user: Joi.string(),
+        adresse_user: Joi.string(),
+        motdepasse: Joi.string().min(6).required(),
+        argent_gagner: Joi.number(),
     });
     validateRequest(req, next, schema);
 }
@@ -78,16 +79,17 @@ function getById(req, res, next) {
 
 function updateSchema(req, res, next) {
     const schema = Joi.object({
-        nom_prenom: Joi.string().empty(''),
+        nom_utilisateur: Joi.string().empty(''),
+        prenom_utilisateur: Joi.string().empty(''),
         date_naissance: Joi.date().empty(''),
         email: Joi.string().email().empty(''),
         tel_utilisateur: Joi.string().empty(''),
-        occupation: Joi.string().empty(''),
         role: Joi.string().empty(''),
         pays_user: Joi.string().empty(''),
         ville_user: Joi.string().empty(''),
         adresse_user: Joi.string().empty(''),
-        motdepasse: Joi.string().min(6).required()
+        motdepasse: Joi.string().min(6).required(),
+        argent_gagner: Joi.number(),
     });
     validateRequest(req, next, schema);
 }

@@ -10,7 +10,8 @@ function Produit(sequelize) {
         categorie: { type: DataTypes.STRING, allowNull: true },
         reference: { type: DataTypes.STRING, allowNull: true },
         prix: { type: DataTypes.FLOAT, allowNull: true },
-        description: { type: DataTypes.TEXT, allowNull: true }
+        description: { type: DataTypes.TEXT, allowNull: true },
+        offre_id: { type: DataTypes.INTEGER, allowNull: false, references: { model : 'Offres', key: 'id' } }
     };
 
     const options = {

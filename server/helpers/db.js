@@ -3,6 +3,7 @@ const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
 
 User = require('../modules/users/user.model');
+User_Favori = require('../modules/users_favoris/userf.model');
 Prestataire = require('../modules/prestataires/prestataire.model');
 Garage = require('../modules/garages/garage.model');
 Coupon = require('../modules/coupons/coupon.model');
@@ -12,6 +13,7 @@ Expert = require('../modules/experts/expert.model');
 Fichier = require('../fichiers/fichier.model');
 Log = require('../logs/log.model');
 Offre = require('../modules/offres/offre.model');
+Offre_Dispo = require('../modules/offres_dispo/offred.model');
 
 module.exports = db = {};
 
@@ -30,9 +32,11 @@ async function initialize() {
     // init models and add them to the exported db object
 
     db.User = require('../modules/users/user.model')(sequelize);
+    db.User_Favori = require('../modules/users_favoris/userf.model')(sequelize);
     db.Fichier = require('../fichiers/fichier.model')(sequelize);
     db.Log = require('../logs/log.model')(sequelize);
     db.Offre = require('../modules/offres/offre.model')(sequelize);
+    db.Offre_Dispo = require('../modules/offres_dispo/offred.model')(sequelize);
     db.Prestataire = require('../modules/prestataires/prestataire.model')(sequelize);
     db.Garage = require('../modules/garages/garage.model')(sequelize);
     db.Service = require('../modules/services/service.model')(sequelize);

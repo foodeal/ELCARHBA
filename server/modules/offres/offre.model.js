@@ -3,9 +3,7 @@ module.exports = Offre;
 
 function Offre(sequelize) {
     const attributes = {
-        date_debut: { type: DataTypes.DATEONLY, allowNull: false },
-        date_fin: { type: DataTypes.DATEONLY, allowNull: false },      
-        services_produits: { type: DataTypes.TEXT, allowNull: true },
+        titre_offre: { type: DataTypes.TEXT, allowNull: false },
         conditions_utilisation: { type: DataTypes.TEXT, allowNull: false },
         quantite: { type: DataTypes.FLOAT, allowNull: true },
         description: { type: DataTypes.TEXT, allowNull: true },

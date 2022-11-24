@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 // api routes
 app.use('/images', express.static('images'));
 app.use('/users', require('./modules/users/user.controller'));
+app.use('/users_favoris', require('./modules/users_favoris/userf.controller'));
 app.use('/prestataires', require('./modules/prestataires/prestataire.controller'));
 app.use('/coupons', require('./modules/coupons/coupon.controller'));
 app.use('/experts', require('./modules/experts/expert.controller'));
@@ -39,7 +40,7 @@ app.use('/garages', require('./modules/garages/garage.controller'));
 app.use('/fichiers', require('./fichiers/fichier.controller'));
 app.use('/logs', require('./logs/log.controller'));
 app.use('/offres', require('./modules/offres/offre.controller'));
-
+app.use('/offres_dispo', require('./modules/offres_dispo/offred.controller'));
 // global error handler
 app.use(errorHandler);
 
