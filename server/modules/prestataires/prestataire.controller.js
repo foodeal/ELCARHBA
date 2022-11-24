@@ -40,6 +40,7 @@ function registerSchema(req, res, next) {
         tel_prestataire: Joi.string().required(),
         raison_sociale: Joi.string().required(),
         role: Joi.string().required(),
+        description: Joi.string().required(),
         pays_prestataire: Joi.string().required(),
         ville_prestataire: Joi.string().required(),
         adresse_prestataire: Joi.string().required(),
@@ -48,7 +49,7 @@ function registerSchema(req, res, next) {
         lien_fb: Joi.string().required(),
         lien_insta: Joi.string().required(),
         registre_commerce: Joi.string().required(),
-        cin_geron: Joi.string().required(),
+        cin_gerant: Joi.string().required(),
         contrat_condition: Joi.string().required(),
         motdepasse: Joi.string().min(6).required(),
     });
@@ -91,6 +92,7 @@ function updateSchema(req, res, next) {
         tel_prestataire: Joi.string().required(),
         raison_sociale: Joi.string().required(),
         role: Joi.string().required(),
+        description: Joi.string().required(),
         pays_prestataire: Joi.string().required(),
         ville_prestataire: Joi.string().required(),
         adresse_prestataire: Joi.string().required(),
@@ -99,7 +101,7 @@ function updateSchema(req, res, next) {
         lien_fb: Joi.string().required(),
         lien_insta: Joi.string().required(),
         registre_commerce: Joi.string().required(),
-        cin_geron: Joi.string().required(),
+        cin_gerant: Joi.string().required(),
         contrat_condition: Joi.string().required(),
         motdepasse: Joi.string().min(6).required(),
     });
