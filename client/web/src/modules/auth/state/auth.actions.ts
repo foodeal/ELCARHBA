@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
-import { ErrorResponseData, UserDetails, SigninData } from '@core/models';
+import { ErrorResponseData, UserDetails, SigninData, SignupData } from '@core/models';
 
 export const authenticate = createAction<SigninData>('[auth/Api] authenticate');
+export const register = createAction<SignupData>('[auth/RegisterApi] register');
 export const authenticateSuccess = createAction<UserDetails>('[auth/Api] authenticate success');
 export const authenticateFailed = createAction<ErrorResponseData>('[auth/Api] authenticate failed');
 

@@ -2,7 +2,6 @@ export interface SignupDTO {
   email: string;
   nom_prenom: string;
   motdepasse: string;
-  occupation: string;
   date_naissance: Date;
   tel_utilisateur: string;
   pays_user: string;

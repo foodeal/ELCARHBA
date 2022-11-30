@@ -20,8 +20,8 @@ module.exports = router;
 function addSchema(req, res, next) {
     const schema = Joi.object({
         nom_précom_expert: Joi.string(),
-        mail_expert: Joi.string(),   
-        téléphone_expert: Joi.string(),
+        mail_expert: Joi.string().email(),   
+        telephone_expert: Joi.string(),
         domaine_expert: Joi.string()
     });
     validateRequest(req, next, schema);
@@ -52,8 +52,8 @@ function getById(req, res, next) {
 function updateSchema(req, res, next) {
     const schema = Joi.object({
         nom_précom_expert: Joi.string(),
-        mail_expert: Joi.string(),   
-        téléphone_expert: Joi.string(),
+        mail_expert: Joi.string().email(),   
+        telephone_expert: Joi.string(),
         domaine_expert: Joi.string()
     });
     validateRequest(req, next, schema);

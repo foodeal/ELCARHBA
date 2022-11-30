@@ -21,7 +21,6 @@ export namespace SignupData {
       nom_prenom: data.fullName,
       motdepasse: data.password,
       date_naissance: data.birthDate,
-      occupation: data?.occupation,
       tel_utilisateur: data.phoneNumber,
       ville_user: data.town,
       pays_user: data.country,

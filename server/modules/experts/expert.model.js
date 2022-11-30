@@ -5,7 +5,7 @@ function Expert(sequelize) {
     const attributes = {
         nom_précom_expert: { type: DataTypes.STRING, allowNull: false },
         mail_expert: { type: DataTypes.STRING, allowNull: false },      
-        téléphone_expert: { type: DataTypes.STRING, allowNull: true },
+        telephone_expert: { type: DataTypes.STRING, allowNull: true },
         domaine_expert: { type: DataTypes.STRING, allowNull: false }
     };
 

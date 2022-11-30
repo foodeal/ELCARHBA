@@ -84,7 +84,6 @@ export function SignUp(): JSX.Element {
               {renderFields(SignupFormNamesEnum.Country)}
               {renderFields(SignupFormNamesEnum.Town)}
               {renderFields(SignupFormNamesEnum.Address)}
-
               {renderFields(SignupFormNamesEnum.Password)}
               {renderFields(SignupFormNamesEnum.ConfirmPassword)}
 
