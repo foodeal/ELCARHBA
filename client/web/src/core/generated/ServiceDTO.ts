@@ -1,11 +1,11 @@
-export interface OffreDTO {
-  titre_offre: string;
-  conditions_utilisation: string;
-  quantite: number;
+export interface ServiceDTO {
+  id: number;
+  nom: string;
+  modele: string;
+  type_motorisation: string;
+  categorie: string;
+  reference: string;
+  prix: number;
   description: string;
-  prix_initial: number;
-  pourcentage_prix_initial: number;
-  prix_remise: number;
-  prestataire_id: number;
-  statut: string;
+  offre_id: number;
 }

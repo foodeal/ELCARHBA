@@ -4,6 +4,8 @@ import { LoginDTO } from '../generated/LoginDto';
 import { UserDTO } from '../generated/UserDto';
 import { UserDetails } from '../models/user/user-details';
 import { SignupDTO } from '@core/generated/SignupDTO';
+import { Service } from '@core/models/service/service';
+import { ServiceDTO } from '@core/generated/ServiceDTO';
 
 export async function authenticate(params: HttpParamsType<LoginDTO>): Promise<UserDetails> {
   console.log("Params", params);
@@ -12,11 +14,11 @@ export async function authenticate(params: HttpParamsType<LoginDTO>): Promise<Us
   return UserDetails.mapToApiValue(user);
 }
 
-export async function register(params: HttpParamsType<SignupDTO>): Promise<UserDetails> {
+export async function register(params: HttpParamsType<ServiceDTO>): Promise<Service> {
   console.log("Params", params);
-  const user = await post<UserDTO>(apiUrlMatcher(ApiUrlsEnum.Register), params);
+  const user = await post<UserDTO>(apiUrlMatcher(ApiUrlsEnum.AddService), params);
 
-  return UserDetails.mapToApiValue(user);
+  return Service.mapToApiValue(user);
 }
 
 export async function checkToken(): Promise<UserDetails> {

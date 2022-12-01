@@ -1,6 +1,6 @@
 import { UserDTO } from '../../generated/UserDto';
 
-export interface UserDetails {
+export interface Service {
   id: string;
   token: string;
   email: string;
@@ -8,8 +8,8 @@ export interface UserDetails {
   lastName: string;
 }
 
-export namespace UserDetails {
-  export function mapToApiValue(data: UserDTO): UserDetails {
+export namespace Service {
+  export function mapToApiValue(data: UserDTO): Service {
     return {
       id: data.id.toString(),
       token: data.token,

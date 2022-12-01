@@ -1,4 +1,4 @@
-export interface UserDTO {
+export interface PrestataireDTO {
   id: number;
   token: string;
   email: string;

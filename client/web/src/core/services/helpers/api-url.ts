@@ -20,11 +20,11 @@ export enum ApiUrlsEnum {
   UpdatePrestataire = '/users/',
 
   //Offre & Offre Disponible
-  AddOffer = '/offres/add',
-  GetOffer = '/offres/', 
-  GetAllOffers = '/offres/',
-  DeleteOffer = '/offres/',
-  UpdateOffer = '/offres/',
+  AddOffre = '/offres/add',
+  GetOffre = '/offres/', 
+  GetAllOffres = '/offres/',
+  DeleteOffre = '/offres/',
+  UpdateOffre = '/offres/',
 
   AddOfferDispo = '/offres_dispo/add',
   GetOfferDispo = '/offres_dispo/', 
