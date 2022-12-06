@@ -129,3 +129,5 @@ Redux Toolkit is a dogmatic, sequences-included toolset for well-organized redux
 ### Redux Saga
 
 Redux saga reacts as a middleware that takes over the control of you actions before reaching the reducer directly.
+### elcarhba frontend architecture
+![alt text](https://github.com/foodeal/ELCARHBA/edit/build-web/client/web/elcarhba-a.drawio.png?raw=true)
