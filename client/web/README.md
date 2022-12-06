@@ -21,6 +21,7 @@ To run this project I will be assuming that you have all the tools to run Next.j
     - [Redux](#redux)
     - [Redux Toolkit](#redux-toolkit)
     - [Redux Saga](#redux-saga)
+  - [ELCARHBA frontend architecture](#elcarhba-frontend-architecture)
 
 ---
 
@@ -129,5 +130,5 @@ Redux Toolkit is a dogmatic, sequences-included toolset for well-organized redux
 ### Redux Saga
 
 Redux saga reacts as a middleware that takes over the control of you actions before reaching the reducer directly.
-### elcarhba frontend architecture
-![alt text](https://github.com/foodeal/ELCARHBA/edit/build-web/client/web/public/elcarhba-a.drawio.png?raw=true)
+## ELCARHBA frontend architecture
+![elcarhba architecture](https://github.com/foodeal/ELCARHBA/edit/build-web/client/web/public/elcarhba-a.drawio.png?raw=true)
