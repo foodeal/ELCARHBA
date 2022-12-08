@@ -11,15 +11,15 @@ function Prestataire(sequelize) {
         role: { type: DataTypes.STRING, allowNull: true },
         pays_prestataire: { type: DataTypes.STRING, allowNull: true },
         ville_prestataire: { type: DataTypes.STRING, allowNull: true },
-        adresse_prestataire: { type: DataTypes.STRING, allowNull: false },
-        description: { type: DataTypes.STRING, allowNull: false },
+        adresse_prestataire: { type: DataTypes.STRING, allowNull: true },
+        description: { type: DataTypes.STRING, allowNull: true },
         site_web: { type: DataTypes.STRING, allowNull: true },
         lien_fb: { type: DataTypes.STRING, allowNull: true },
         lien_insta: { type: DataTypes.STRING, allowNull: true },
-        registre_commerce: { type: DataTypes.STRING, allowNull: false },
-        cin_gerant: { type: DataTypes.STRING, allowNull: false },
-        contrat_condition: { type: DataTypes.STRING, allowNull: false },
-        motdepasse: { type: DataTypes.STRING, allowNull: false }
+        registre_commerce: { type: DataTypes.STRING, allowNull: true },
+        cin_gerant: { type: DataTypes.STRING, allowNull: true },
+        contrat_condition: { type: DataTypes.STRING, allowNull: true },
+        motdepasse: { type: DataTypes.STRING, allowNull: true }
     };
 
     const options = {

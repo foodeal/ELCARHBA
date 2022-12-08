@@ -1,21 +1,27 @@
-import { UserDTO } from '../../generated/UserDto';
+import { GarageDTO } from '@core/generated/GarageDTO';
 
-export interface UserDetails {
-  id: string;
-  token: string;
-  email: string;
-  firstName: string;
-  lastName: string;
+export interface GarageData {
+  id: number;
+  nom_garage: string;
+  heures_travail: string;
+  jours_travail: string;
+  adresse_garage: string;
+  contact_garage: string;
+  type_garage: string;
+  prestataire_id: number;
 }
 
-export namespace UserDetails {
-  export function mapToApiValue(data: UserDTO): UserDetails {
+export namespace GarageData {
+  export function mapToApiValue(data: GarageDTO): GarageData {
     return {
-      id: data.id.toString(),
-      token: data.token,
-      email: data.email,
-      firstName: data.firstName,
-      lastName: data.lastName,
+      id: data.id,
+      nom_garage: data.nom_garage,
+      heures_travail: data.heures_travail,
+      jours_travail: data.jours_travail,
+      adresse_garage: data.adresse_garage,
+      contact_garage: data.contact_garage,
+      type_garage: data.type_garage,
+      prestataire_id: data.prestataire_id
     };
   }
 }

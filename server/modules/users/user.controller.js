@@ -38,7 +38,7 @@ function registerSchema(req, res, next) {
         prenom_utilisateur: Joi.string().required(),
         date_naissance: Joi.date().required(),
         email: Joi.string().email().required(),
-        tel_utilisateur: Joi.string(),
+        tel_utilisateur: Joi.string().required(),
         role: Joi.string(),
         pays_user: Joi.string(),
         ville_user: Joi.string(),
