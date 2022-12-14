@@ -6,6 +6,7 @@ const Op = Sequelize.Op;
 
 module.exports = {
     getAll,
+    getCouponDispo,
     getById,
     create,
     update,
@@ -16,6 +17,13 @@ module.exports = {
 
 async function getAll() {
     return await db.Coupon.findAll(); 
+}
+
+async function getCouponDispo() {
+    coupon = await db.Coupon.findAll({ where: { date_valide_coupon : { [Op.gt]: new Date() } } });
+
+    if (!coupon) {throw 'Vide' }
+    else return await coupon;
 }
 
 async function getById(id) {

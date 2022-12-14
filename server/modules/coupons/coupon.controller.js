@@ -8,6 +8,7 @@ const couponService = require('./coupon.service');
 // routes
 router.post('/add',authorize(), addSchema, add);
 router.get('/', authorize(), getAll);
+router.get('/dispo', authorize(), getCouponDispo);
 router.get('/current', authorize(), getCurrent);
 router.get('/:id', authorize(), getById);
 router.post('/scoupon/', authorize(), findCoupon);
@@ -38,6 +39,12 @@ function add(req, res, next) {
 
 function getAll(req, res, next) {
     couponService.getAll()
+        .then(coupons => res.json(coupons))
+        .catch(next);
+}
+
+function getCouponDispo(req, res, next) {
+    couponService.getCouponDispo()
         .then(coupons => res.json(coupons))
         .catch(next);
 }
