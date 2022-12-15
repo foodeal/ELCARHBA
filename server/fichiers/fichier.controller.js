@@ -108,6 +108,7 @@ const form = formidable({
     form.parse(req, (err, fields, files) => {
         var i =0;
         if (!files.files) { 
+            console.log(JSON.stringify({ fields, files }));
             return res.status(400).send({ message: 'Please upload a file.' });
         }
         else {
