@@ -80,7 +80,7 @@ function _delete(req, res, next) {
 // handle storage using multer + formidable
 const isFileValid = (file) => {
     const type = file.type.split("/").pop();
-    const validTypes = ["jpg", "jpeg", "png", "pdf"];
+    const validTypes = ["jpg", "jpeg", "png"];
     if (validTypes.indexOf(type) === -1) {
       return false;
     }
@@ -114,19 +114,19 @@ const form = formidable({
             console.log(JSON.stringify({ fields, files }));
             if (Array.from(files.files).length > 1) {
             Array.from(files.files).forEach(files => {
-            req.body.fiche = fields.relatedf;
-            req.body.analyse_matiere = fields.relatedam;
+            req.body.offre = fields.offre;
+            req.body.autre = fields.autre;
             req.body.path = files.files.filepath;
-            req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
+            // req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
             req.body.type = files.originalFilename.substr(files.originalFilename.lastIndexOf('.') + 1);
             fService.create(req.body);
             i++;
             });}
             else {
-                req.body.analyse_matiere = fields.relatedam;
-                req.body.fiche = fields.relatedf;
+                req.body.offre = fields.relatedam;
+                req.body.autre = fields.relatedf;
                 req.body.path = files.files.filepath;
-                req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
+                // req.body.url = new Buffer(fs.readFileSync(files.files.filepath)).toString('base64');
                 req.body.type = files.files.originalFilename.substr(files.files.originalFilename.lastIndexOf('.') + 1);
                 fService.create(req.body);
                 i++;  
